@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "A simple event emitter with TypeScript inference",
   "author": "Aaron Ishibashi",
+  "repository": "https://github.com/tadashibashi/delegate.ts",
+  "license": "ISC",
+
   "main": "dist",
   "types": "dist",
   "type": "module",
-  "license": "ISC",
+
   "scripts": {
     "build": "tsc"
   },
+
   "devDependencies": {
     "bun-types": "^1.0.30",
     "typescript": "^5.4.2"
