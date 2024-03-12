@@ -1,0 +1,3 @@
+# all packages are development-only
+bun.lockb
+node_modules
