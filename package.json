@@ -5,6 +5,7 @@
   "author": "Aaron Ishibashi",
   "repository": "https://github.com/tadashibashi/delegate.ts",
   "license": "ISC",
+  "keywords": ["event", "callback", "listener", "emit", "emitter", "delegate", "observer", "subject"],
 
   "main": "dist",
   "types": "dist",
