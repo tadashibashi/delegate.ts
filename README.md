@@ -2,7 +2,7 @@
 
 A simple event emitter with TypeScript inference
 
-#### Code preview
+### Code preview
 
 ```typescript
 const onDataProcessed = new Delegate<[data: Uint8Array]>();
@@ -18,9 +18,8 @@ onDataProcessed.addListener(processData);
 onDataProcessed(new Uint8Array(...));
 ```
 
-*Adding a member function callback*
+*Add a member function callback*
 ```typescript
-// arbitrary class
 class DataReceiver {
     constructor() { }
 
@@ -32,6 +31,27 @@ const dataReceiver = new DataReceiver();
 
 // specify `this` context as the second argument
 onDataProcessed.addListener(dataReceiver.handleData, dataReceiver);
+```
+
+*Remove listeners*
+```typescript
+// module/global-scoped function
+onDataProcessed.removeListener(processData);
+
+// member function
+onDataProcessed.removeListener(dataReceiver.handleData, dataReceiver);
+```
+
+*"Once" pattern*
+```typescript
+
+const fireAndForget = function(data: Uint8Array) {
+    // do something
+
+    onDataProcessed.removeListener(fireAndForget);
+}
+
+onDataProcessed.addListener()
 ```
 
 *Asynchronous call*
@@ -52,8 +72,7 @@ const trackEvents = {
     onTransition: new Delegate<[from: number, to: number]>()
 };
 
-// or in a class
-
+// in a class
 class TrackManager {
     constructor() { }
 
@@ -67,7 +86,7 @@ class TrackManager {
 
 Please read the `Delegate.ts` and `Delegate.test.ts` files for further information on usage.
 
-#### Installation
+### Installation
 
 ```bash
 npm install delegate.ts
@@ -80,12 +99,12 @@ npm install delegate.ts
 - Clone the repo, run either `tsc` in the root directory, or `bun i && bun run build`
 - Drop the built `dist/Delegate.js` into your project.
 
-#### Compatibility
+### Compatibility
 
 - Works in node, bun, browser, etc.
 - Requires an ES6+ environment, due to the use of `Proxy` and `Promise`
 
-#### Development
+### Development
 
 Bun is used for testing
 

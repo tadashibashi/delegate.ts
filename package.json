@@ -1,6 +1,6 @@
 {
   "name": "delegate.ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple event emitter with TypeScript inference",
   "author": "Aaron Ishibashi",
   "repository": "https://github.com/tadashibashi/delegate.ts",
